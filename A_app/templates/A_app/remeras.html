@@ -1,0 +1,10 @@
+{% extends 'A_Main/index.html' %} 
+{% block title %}| Remeras {% endblock %}
+{%block content %}
+    <h1>T SHIRTS</h1>
+    <ul>
+        {% for shirt_list in lista_remeras %}
+            <li>{{shirt_list.disenio}} - {{shirt_list.talle}}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

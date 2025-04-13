@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pagina {% block title %} {% endblock title %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style_index.css' %}" />
+    <link
+      rel="icon"
+      type="image/icon"
+      href="{% static 'css/images/icono_01.png' %}"
+    />
+  </head>
+  <body>
+    <header>
+      <h2 class="logo">
+        <a href="{% url 'Main:index' %}"> Web con Django </a>
+      </h2>
+      <nav class="navi">
+        <a href="{% url 'contenido:discos' %}">Discos</a>
+        <a href="{% url 'contenido:libros' %}">Libros</a>
+        <a href="{% url 'contenido:remeras' %}">Remeras</a>
+      </nav>
+    </header>
+    <main>{%block content%} {% endblock %}</main>
+  </body>
+</html>
