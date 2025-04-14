@@ -2,6 +2,7 @@
 {% block title %}| Discos {% endblock %} 
 {%block content %}
     <h1>GOOD MUSIC</h1>
+    <a href="{% url 'nuevo_disco' %}">Nuevo</a>
     <ul>
         {% for cd_list in lista_discos %}
             <li>{{cd_list.nombre}} - {{cd_list.artista}} - {{cd_list.year}}</li>
