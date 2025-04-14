@@ -53,3 +53,13 @@ def remera_nueva(request):
     else:
         formulario = RemeraForm()
     return render(request, "A_app/submit_remera.html", {"formulario": formulario})
+
+
+def busqueda_discos(request):
+    buscar = request.GET.get("q", "")
+    resultados = []
+    if buscar:
+        encontrado = Disco.objects.filter(artista__icontains=buscar)
+        if encontrado.exists():
+            resultados.append(("Disco", encontrado))
+    return render(request, "A_app/resultados.html", {"resultados": resultados})

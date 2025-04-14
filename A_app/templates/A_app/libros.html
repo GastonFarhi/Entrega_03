@@ -3,8 +3,8 @@
 {%block content %}
     <ul style="list-style-type: none; padding: 0;">
         <h1 style="text-align: center; padding-top: 9%; text-decoration-line: overline; text-decoration-color: lightsteelblue;"> 
-            <a href="{% url 'contenido:agg_libro' %}", style="cursor: default; user-select: none; text-decoration: none; color: lightsteelblue; text-shadow: -1px 1px 0 black;">
-                BEAUTIFULL BOOKS
+            <a href="{% url 'contenido:agg_libro' %}", style="user-select: none; text-decoration: none; color: lightsteelblue; text-shadow: -1px 1px 0 black;">
+                Libros
             </a>
         </h1>
         {% for libro_list in lista_libros %}

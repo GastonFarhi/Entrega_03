@@ -2,9 +2,13 @@
 {% block title %}| Discos {% endblock %} 
 {%block content %}
     <ul style="list-style-type: none; padding: 0;">
-        <h1 style="text-align: center; padding-top: 9%; text-decoration-line: overline; text-decoration-color: lightsteelblue;">
-            <a href="{% url 'contenido:agg_disco' %}" style="cursor: default; user-select: none; text-decoration: none; color: lightsteelblue; text-shadow: -1px 1px 0 black;">
-                GOOD MUSIC
+        <form method="GET" action="{% url 'contenido:resultados' %}" style="text-align: center; padding: 15px;">
+            <input type="text" name="q" placeholder="Buscar por artista" autocomplete="off" style="color: lightsteelblue; padding: 8px; width: 300px; text-align: center; border: none; background: transparent; outline: none;">
+            <button class="busc" type="submit">Buscar</button>
+        </form>
+        <h1 class="titulo_disc">
+            <a href="{% url 'contenido:agg_disco' %}" style="user-select: none; text-decoration: none; color: lightsteelblue; text-shadow: -1px 1px 0 black;">
+                Música
             </a>
         </h1>
         {% for cd_list in lista_discos %}

@@ -88,3 +88,17 @@ main > * {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 0, 255, 0.3); 
 }
+input::placeholder {
+  color: lightsteelblue;
+}
+.titulo_disc {
+  text-align: center; 
+  padding-top: 5%; 
+  text-decoration-line: overline; 
+  text-decoration-color: lightsteelblue;
+}
+.busc {
+  color: black;
+  text-decoration: none;
+  padding: 8px 15px;
+}

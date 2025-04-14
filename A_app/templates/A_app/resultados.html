@@ -1,0 +1,22 @@
+{% extends 'A_Main/index.html' %} 
+{% block title %}| Discos {% endblock %} 
+{%block content %}
+    {% if resultados %}
+        <ul style="text-align: center;">
+            <h2 style="text-align: center;padding-top: 50px; padding-bottom: 10px; text-decoration-line: underline;">Resultados de Busqueda</h2> 
+            {% for model_name, discos in resultados %}
+                <ul>
+                    {% for disco in discos %}
+                        <li>{{ disco.nombre }} - {{ disco.year }}</li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <div>
+            <h2 style="text-align: center; margin-top: 50px;">Resultados de Busqueda</h2>
+            <h3 style="text-align: center; margin-top: 50px;">Sin resultados.</h3>
+            <button>Volver a Discos</button>
+        </div> 
+    {% endif %}
+{% endblock %}
