@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'A_Main/index.html' %} 
+{% block title %}| Libro Nuevo {% endblock %} 
+{%block content %}
+    <form method="post" style="text-align: center">
+        {% csrf_token %}
+        <p style="padding-bottom: 50px;"> {{ formulario }} </p>
+        <button type="submit" style="font-size: 30px; font-weight: bolder; font-style: italic; margin-top: 15%; cursor: default; user-select: none; text-decoration: none; color: lightsteelblue; text-shadow: -1px 1px 0 black; background: none;border: none;">
+            Subir Libro</button>
+    </form>
+{% endblock %}

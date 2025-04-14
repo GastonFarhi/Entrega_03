@@ -1,10 +1,14 @@
 {% extends 'A_Main/index.html' %}
 {% block title %}| Remeras {% endblock %}
 {%block content %}
-    <h1>T SHIRTS</h1>
     <ul style="list-style-type: none; padding: 0;">
+        <h1 style="text-align: center; padding-top: 9%; text-decoration-line: overline; text-decoration-color: lightsteelblue;">
+            <a href="{% url 'contenido:agg_remera' %}" style="cursor: default; user-select: none; text-decoration: none; color: lightsteelblue; text-shadow: -1px 1px 0 black;">
+                T SHIRTS
+            </a>
+        </h1>
         {% for shirt_list in lista_remeras %}
-            <li style="padding: 10px; border-bottom: 1px solid #ccc;">
+            <li style="padding: 10px; padding-top: 9%; border-bottom: 1px solid #ccc; text-align: center;">
                 {{shirt_list.disenio}} - {{shirt_list.talle}}
             </li>
         {% endfor %}

@@ -1,10 +1,16 @@
 {% extends 'A_Main/index.html' %}
 {% block title %}| Libros {% endblock %} 
 {%block content %}
-<h1>BEAUTIFULL BOOKS</h1>
-    <ul>
+    <ul style="list-style-type: none; padding: 0;">
+        <h1 style="text-align: center; padding-top: 9%; text-decoration-line: overline; text-decoration-color: lightsteelblue;"> 
+            <a href="{% url 'contenido:agg_libro' %}", style="cursor: default; user-select: none; text-decoration: none; color: lightsteelblue; text-shadow: -1px 1px 0 black;">
+                BEAUTIFULL BOOKS
+            </a>
+        </h1>
         {% for libro_list in lista_libros %}
-            <li>{{libro_list.titulo}} - {{libro_list.autor}} - {{libro_list.year}}</li>
+            <li style="padding: 10px; padding-top: 9%; border-bottom: 1px solid #ccc; text-align: center;">
+                {{libro_list.titulo}} - {{libro_list.autor}} - {{libro_list.year}}</li>
         {% endfor %}
     </ul>
+    
 {% endblock %}

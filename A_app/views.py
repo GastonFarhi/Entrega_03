@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Disco, Remera, Libros
-from .forms import DiscoFrom
+from .forms import DiscoForm, LibroForm, RemeraForm
 
 
 # Create your views here.
@@ -24,10 +24,32 @@ def libros(request):
 
 def nuevo_disco(request):
     if request.method == "POST":
-        formulario = DiscoFrom(request.POST)
+        formulario = DiscoForm(request.POST)
         if formulario.is_valid():
             formulario.save()
-            return redirect("index")
+            return redirect("contenido:discos")
     else:
-        formulario = DiscoFrom()
+        formulario = DiscoForm()
     return render(request, "A_app/submit_disco.html", {"formulario": formulario})
+
+
+def libro_nuevo(request):
+    if request.method == "POST":
+        formulario = LibroForm(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect("contenido:libros")
+    else:
+        formulario = LibroForm()
+    return render(request, "A_app/submit_libro.html", {"formulario": formulario})
+
+
+def remera_nueva(request):
+    if request.method == "POST":
+        formulario = RemeraForm(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect("contenido:remeras")
+    else:
+        formulario = RemeraForm()
+    return render(request, "A_app/submit_remera.html", {"formulario": formulario})
